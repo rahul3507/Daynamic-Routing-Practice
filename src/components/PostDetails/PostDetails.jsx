@@ -1,8 +1,10 @@
 import React from 'react'
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useParams } from 'react-router';
 
 const PostDetails = () => {
     const post = useLoaderData();
+    const { postId } = useParams();
+    console.log(postId);
   return (
     <div>
         
