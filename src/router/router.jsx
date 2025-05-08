@@ -23,7 +23,9 @@ export  const rootRouter=   createBrowserRouter([
             },
             {
                 path:'/user',
-                element:<User/>
+                loader:()=>fetch('https://jsonplaceholder.typicode.com/users'),
+                element:<User/>,
+                action: () => { /* Add any action if needed */ }
             }
         ]
             
