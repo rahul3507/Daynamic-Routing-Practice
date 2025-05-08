@@ -5,6 +5,7 @@ import Home from '../components/Home/Home'
 import Header from '../components/header/Header'
 import About from '../components/About/About'
 import Contact from '../components/Contact/Contact'
+import { User } from '../components/User/User'
 
 
 export  const rootRouter=   createBrowserRouter([
@@ -19,6 +20,10 @@ export  const rootRouter=   createBrowserRouter([
             {
                 path:'/contact',
                 element:<Contact/>
+            },
+            {
+                path:'/user',
+                element:<User/>
             }
         ]
             
