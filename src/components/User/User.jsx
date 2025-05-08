@@ -1,13 +1,17 @@
 import React from 'react'
-import { useLoaderData } from 'react-router'
+import { Link } from 'react-router';
 
-export const User = () => {
-    const users = useLoaderData();
+export const User = ({User}) => {
+    const {id,name, email, phone} = User;
   return (
     <div>
-        <h1>Users</h1>
-        <h2>Total users:: {users.length}</h2>
-        <p>List of users will be displayed here.</p>
+        <h2>{name}</h2>
+        <p>Email: {email}</p>
+        <p>Phone: {phone}</p>
+        <Link to={`/user/${id}`}>View Details</Link>
+        <Link to={`/user/${id}`}><button>Click me</button></Link>
+
+
     </div>
   )
 }

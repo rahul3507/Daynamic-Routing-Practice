@@ -2,10 +2,11 @@
 import {createBrowserRouter} from 'react-router'
 
 import Home from '../components/Home/Home'
-import Header from '../components/header/Header'
+
 import About from '../components/About/About'
 import Contact from '../components/Contact/Contact'
-import { User } from '../components/User/User'
+import {  Users } from '../components/Users/Users'
+import { UserDetails } from '../components/UserDetails/UserDetails'
 
 
 export  const rootRouter=   createBrowserRouter([
@@ -22,10 +23,15 @@ export  const rootRouter=   createBrowserRouter([
                 element:<Contact/>
             },
             {
-                path:'/user',
+                path:'/users',
                 loader:()=>fetch('https://jsonplaceholder.typicode.com/users'),
-                element:<User/>,
-                action: () => { /* Add any action if needed */ }
+                element:<Users/>,
+                
+            },
+            {
+                path:'/user/:userId',
+                loader:({params})=>fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
+                element:<UserDetails/>,
             }
         ]
             
